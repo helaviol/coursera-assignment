@@ -1,5 +1,5 @@
-coursera assignment
+COURSERA ASSIGNMENT
 
-Wed Apr  1 15:10:48 EEST 2020
+Thu Apr  2 11:53:01 EEST 2020
 
-number of lines of code in guessinggame.sh : 20
+Number of lines of code in guessinggame.sh : 26
