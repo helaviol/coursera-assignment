@@ -1,20 +1,26 @@
-function guessinggame.sh {
+function count_files {
+        count=$(ls -l | grep -v ^d | wc -l)
+        echo $count
+}
 
 echo How many files are in the current directory?
 
 read response
 
-  if [[ $response -eq 3 ]] 
-  then
-    echo Congratulations! $response is the correct answer.
+count=$(count_files)
 
-  elif [[ $response -gt 3 ]]
-  then 
-    echo $response is an incorrect answer. Try again and aim a little lower. 
-    read response
-
-  else
-    echo $response is an incorrect answer. Try again and aim a little higher. 
-    read response
-  fi
-}
+if [[ $response -ne $count ]]
+then
+        while [ $response -ne $count ]
+        do
+                if  [[ $response -lt $count ]]
+                then
+                        echo "Your answer is incorrect. Aim a little higher!"
+                elif [[ $response -gt $count ]]
+                then
+                        echo "Your answer is incorrect. Aim a little lower!"
+                fi
+                read response
+        done
+fi
+echo "Congratulations! Your answer is correct"
